@@ -34,11 +34,17 @@ Query parameters:
 ---
 
 ### PUT /api/issues/{project}
-Update an existing issue.
+Update one or more fields of an existing issue.
 
-Required:
-- _id  
-- At least one other field to update
+**Request body:**
+- `_id` (required)  
+- Any of the following fields (optional):  
+  - `issue_title`  
+  - `issue_text`  
+  - `created_by`  
+  - `assigned_to`  
+  - `status_text`  
+  - `open` – Set to `false` to close the issue (e.g., via the "Check to close issue" checkbox in the form)
 
 ---
 
